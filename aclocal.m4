@@ -3219,7 +3219,11 @@ define([CF_LIB_PREFIX],
 [
 	case $cf_cv_system_name in
 	(OS/2*|os2*)
-		LIB_PREFIX=''
+		if test "$DFT_LWR_MODEL" = libtool; then
+			LIB_PREFIX='lib'
+		else
+			LIB_PREFIX=''
+		fi
 		;;
 	(*)	LIB_PREFIX='lib'
 		;;
@@ -7116,7 +7120,7 @@ ifdef([AC_PROG_LIBTOOL],[
 	# special hack to add -no-undefined (which libtool should do for itself)
 	LT_UNDEF=
 	case "$cf_cv_system_name" in
-	(cygwin*|msys*|mingw32*|uwin*|aix[[4-7]])
+	(cygwin*|msys*|mingw32*|os2*|uwin*|aix[[4-7]])
 		LT_UNDEF=-no-undefined
 		;;
 	esac

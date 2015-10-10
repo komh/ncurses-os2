@@ -888,7 +888,7 @@ _nc_mouse_event(SCREEN *sp)
     do { \
 	    eventp->bstate = MASK_PRESS(n); \
 	    sp->_mouse_bstate |= MASK_PRESS(n); \
-	    if (kbuf[0] & 0x40) { \
+	    if (button & 0x40) { \
 		    eventp->bstate = MASK_RELEASE(n); \
 		    sp->_mouse_bstate &= ~MASK_PRESS(n); \
 	    } \

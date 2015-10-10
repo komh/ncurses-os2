@@ -6258,7 +6258,11 @@ AC_DEFUN([CF_STDCPP_LIBRARY],
 if test -n "$GXX" ; then
 case $cf_cv_system_name in
 (os2*)
-	cf_stdcpp_libname=stdcpp
+	if test -z "`g++ -dM -E - < /dev/null | grep __KLIBC__`"; then
+		cf_stdcpp_libname=stdcpp
+	else
+		cf_stdcpp_libname=stdc++
+	fi
 	;;
 (*)
 	cf_stdcpp_libname=stdc++

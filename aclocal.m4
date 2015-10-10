@@ -7686,6 +7686,9 @@ case $host_os in
 (openbsd*)
 	# setting _XOPEN_SOURCE breaks xterm on OpenBSD 2.8, is not needed for ncursesw
 	;;
+(os2*)
+	cf_XOPEN_SOURCE=
+	;;
 (osf[[45]]*)
 	cf_xopen_source="-D_OSF_SOURCE"
 	;;

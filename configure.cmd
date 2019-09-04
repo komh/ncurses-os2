@@ -8,7 +8,7 @@ opts="
     --disable-stripping
     --with-libtool
     --with-default-terminfo-dir=\${prefix}/share/terminfo
-    --with-pkg-config-libdir=\${prefix}/lib/pkg-config
+    --with-pkg-config-libdir=\${prefix}/lib/pkgconfig
 "
 
 "./$n" $opts "$@" 2>&1 | tee "$n.log"
